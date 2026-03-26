@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+.env.*
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Node
+node_modules/
+dist/
+build/
+
+# Logs
+*.log
+
+# Test outputs
+coverage/
+*.cover
+*.py,cover
+.hypothesis/
+
+# Others
+*.sqlite3
+*.db
+*.bak
+*.swp
+*.swo
+
+# Ignore frontend build artifacts
+frontend/dist/
+frontend/node_modules/
