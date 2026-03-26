@@ -1,0 +1,119 @@
+{
+  "info": {
+    "name": "Employee API Test Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Employees",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/employees",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["employees"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Employee",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"employee_id\": \"{{employee_id}}\",\n  \"name\": \"Jane Doe\",\n  \"email\": \"jane.doe@example.com\",\n  \"position\": \"Product Manager\",\n  \"department\": \"Product\",\n  \"salary\": 90000,\n  \"status\": \"active\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/employees/employee",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["employees", "employee"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Employee",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Updated\",\n  \"email\": \"john.doe.updated@example.com\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/employees/{{employee_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["employees", "{{employee_id}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Employee",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/employees/{{employee_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["employees", "{{employee_id}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Employees by Department",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/employees/department/Product",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["employees", "department", "Product"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Employee by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/employees/{{employee_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["employees", "{{employee_id}}"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    { "key": "employee_id", "value": "REPLACE_WITH_UUID" }
+  ]
+}

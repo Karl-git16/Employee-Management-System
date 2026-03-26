@@ -1,0 +1,17 @@
+# This file lists the Python dependencies for the backend of the project.
+fastapi
+uvicorn
+pydantic
+pymongo
+pytest
+pytest-asyncio
+httpx
+python-dotenv
+motor
+pydantic[email]
+pydantic-settings
+python-jose 
+passlib[bcrypt]
+passlib[argon2]
+python-multipart
+cors

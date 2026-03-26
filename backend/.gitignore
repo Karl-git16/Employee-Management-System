@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+venv/
+.env
+.env.*
+
+# VSCode
+.vscode/
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test
+*.log
+coverage/
+
+# Others
+*.sqlite3
+*.db
+*.pkl
+*.bak
+*.swp
+*.swo
+*.tmp
+*.orig
+*.old
+*.out
+*.pid
+*.seed
+*.pid.lock
+*.tgz
+*.tar.gz
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
+*.bak
+*.tmp
+*.temp
+*.log
+*.cache
+*.pid
+*.seed
+*.pid.lock
+*.tgz
+*.tar.gz
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
