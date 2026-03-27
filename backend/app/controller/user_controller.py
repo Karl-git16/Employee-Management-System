@@ -38,7 +38,8 @@ def login_user(data):
 
     token = create_access_token({
         "username": user["username"],
-        "role": user["role"]
+        "role": user["role"],
+        "email": user["email"],
     })
 
     # Log activity

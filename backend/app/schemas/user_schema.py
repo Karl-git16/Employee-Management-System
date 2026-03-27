@@ -14,8 +14,6 @@ class UserCreate(BaseModel):
     email: EmailStr
     password: str
     role: Optional[str] = "user"
-    department: Optional[str] = None
-    position: Optional[str] = None
 
     @field_validator("password")
     def validate_password(cls, v):
@@ -36,7 +34,5 @@ class User(BaseModel):
     username: str
     email: EmailStr
     role: str = "user"
-    department: Optional[str] = None
-    position: Optional[str] = None
     activitylog: List[ActivityLog] = []
     

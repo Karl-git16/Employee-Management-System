@@ -26,11 +26,12 @@ def verify_password(plain, hashed):
 # JWT
 def create_access_token(data: dict):
     to_encode = data.copy()
-    expire = datetime.now(timezone.utc) + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+    now = datetime.now(timezone.utc)
+    expire = now + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     to_encode.update({
-        "exp": expire + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES),
-        "iat": expire,
-        "jti": str(uuid4())  # 🔥 ensures uniqueness
+        "exp": expire,      # ✅ correct expiry
+        "iat": now,         # ✅ issued-at is NOW, not future
+        "jti": str(uuid4())
     })
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
 
@@ -53,9 +54,9 @@ def admin_required(user=Depends(get_current_user)):
 # Add below existing code
 
 ROLE_PERMISSIONS = {
-    "admin": ["create_user", "delete_user", "view_users", "update_user", "view_employees"],
-    "manager": ["view_users", "update_user", "view_employees"],
-    "user": ["view_self"]
+    "admin":   ["create_user", "delete_user", "view_users", "update_user", "view_employees", "view_self"],
+    "manager": ["view_users", "update_user", "view_employees", "view_self"],
+    "user":    ["view_self", "view_employees"],
 }
 
 def check_permission(user_role: str, required_permission: str):

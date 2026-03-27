@@ -22,7 +22,7 @@ export default function Login() {
       const { token, role } = response.data;
       localStorage.setItem("token", token);
       localStorage.setItem("role", role);
-      navigate("/");
+      navigate("/dashboard");
     } catch (err) {
       setError(err.response?.data?.message || "Login failed. Please try again.");
     } finally {

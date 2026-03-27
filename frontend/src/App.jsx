@@ -7,6 +7,9 @@ import './App.css'
 import Login from "./pages/login";
 import Register from "./pages/register";
 import Dashboard from "./pages/dashboard";
+import EmployeeDetail from "./pages/Employeedetail";
+import Profile        from "./pages/profile";
+import AdminUsers     from "./pages/Adminusers";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -14,10 +17,13 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />   
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/employees/:id" element={<EmployeeDetail />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/admin/users" element={<AdminUsers />} />
       </Routes>
     </Router>
   );
